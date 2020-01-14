@@ -16,7 +16,7 @@ class AnimalsController < ApplicationController
   def create
     @animal = Animal.new(animal_params)
     if @animal.save
-      redirecto_to animals_path
+      redirect_to animals_path
     else
       render :new
     end

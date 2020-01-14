@@ -1,0 +1,11 @@
+<h1>Add a new sighting:</h1>
+
+<%= form_for [@animal, @sighting] do |f| %>
+  <%= f.label :location %>
+  <%= f.text_area :location %>
+  <%= f.label :longitude %>
+  <%= f.label :longitude %>
+  <%= f.text_field :latitude %>
+  <%= f.text_field :latitude %>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,11 @@
+<h1>Edit sighting:</h1>
+
+<%= form_for [@album, @sighting] do |f| %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.label :longitude %>
+  <%= f.label :longitude %>
+  <%= f.text_area :latitude %>
+  <%= f.text_area :latitude %>
+  <p><%= f.submit %></p>
+<% end %>

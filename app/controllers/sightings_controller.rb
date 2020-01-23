@@ -1,4 +1,6 @@
 class SightingsController < ApplicationController
+  before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
+  
   def new
     @animal = Animal.find(params[:animal_id])
     @sighting = @animal.sightings.new

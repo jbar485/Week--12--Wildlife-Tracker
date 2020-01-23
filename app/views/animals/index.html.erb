@@ -10,5 +10,6 @@
   <p>There are no animals yet.</p>
 <% end %>
 
-
-<p><%= link_to "Create new animal", new_animal_path %></p>
+<% if current_user %>
+  <p><%= link_to "Create new animal", new_animal_path %></p>
+<% end %>

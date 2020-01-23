@@ -1,4 +1,6 @@
 class AnimalsController < ApplicationController
+  before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
+
 
   # Code for listing all animals
   def index

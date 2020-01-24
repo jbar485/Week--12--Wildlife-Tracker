@@ -40,7 +40,7 @@ class AnimalsController < ApplicationController
   def update
     @animal = Animal.find(params[:id])
     if @animal.update(animal_params)
-      redirecto_to animals_path
+      redirect_to animals_path
     else
       render :edit
     end
@@ -50,7 +50,7 @@ class AnimalsController < ApplicationController
   def destroy
     @animal = Animal.find(params[:id])
     @animal.destroy
-    redirecto_to animals_path
+    redirect_to animals_path
   end
 
   private

@@ -4,8 +4,10 @@
   <%= f.label :location %>
   <%= f.text_area :location %>
   <%= f.label :longitude %>
-  <%= f.text_field :longitude %>
+  <%= f.number_field :longitude %>
   <%= f.label :latitude %>
-  <%= f.text_field :latitude %>
+  <%= f.number_field :latitude %>
+  <%= f.label :zip %>
+  <%= f.text_field :zip %>
   <p><%= f.submit %></p>
 <% end %>

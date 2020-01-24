@@ -1,6 +1,6 @@
 class SightingsController < ApplicationController
   before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
-  
+
   def new
     @animal = Animal.find(params[:animal_id])
     @sighting = @animal.sightings.new
@@ -20,6 +20,8 @@ class SightingsController < ApplicationController
   def show
     @animal = Animal.find(params[:animal_id])
     @sighting = Sighting.find(params[:id])
+    weather_object = Weather.new(@sighting.zip)
+    @weather = weather_object.get_weather()
     render :show
   end
 
@@ -47,7 +49,7 @@ class SightingsController < ApplicationController
   # Other controller actions go here.
   private
   def sighting_params
-    params.require(:sighting).permit(:longitude, :latitude, :location)
+    params.require(:sighting).permit(:longitude, :latitude, :location, :zip)
   end
 
 end
